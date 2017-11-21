@@ -14,15 +14,12 @@ M.initilized = false
 M.languages = {}
 
 function M.init()
-	print(M.language)
 	local language = M.language or sys.get_sys_info().language
-	print(M.language)
 	if M.language_list[language] then
 		M.language = language or M.default_langauge
 	else
 		M.language = M.default_language
 	end
-	print(M.language)
 	M.initilized = true
 end
 
@@ -37,7 +34,7 @@ function M.get_text(key)
 	
 	local text = M.languages[M.language][key]
 	if text == nil then
-		print(key .. " is missing!!!")
+		print(key .. " is missing for " .. M.language )
 		return M.languages.en.MISSING_KEY .. key
 	else
 		return text
