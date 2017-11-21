@@ -1,0 +1,39 @@
+local defglot = require("defglot.defglot")
+
+
+function init(self)
+	defglot.language = "en" -- if you don't set a language manually DefGlot will use OS lang
+	defglot.languages = require("example.main_locale")
+	defglot.init()
+	
+	defglot.set_text(gui.get_node("btn_start/label"))
+	defglot.set_text(gui.get_node("btn_about/label"))
+	defglot.set_text(gui.get_node("btn_exit/label"))
+	defglot.set_text(gui.get_node("btn_toggle_profiler/label")) 
+	-- you can see the very long string for the profiler button is shrunk to fit
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end

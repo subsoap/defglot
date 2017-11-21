@@ -1,0 +1,13 @@
+[project]
+title = DefGlot
+dependencies = https://github.com/britzl/gooey/archive/master.zip
+
+[library]
+include_dirs = defglot
+
+[input]
+game_binding = /example/main.input_bindingc
+
+[bootstrap]
+main_collection = /example/main.collectionc
+

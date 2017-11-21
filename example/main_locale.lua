@@ -1,10 +1,8 @@
 -- this file stores text translations
 -- you don't have to use all of these languages in your game
--- you define the languages you want to use in the locale.lua list
 
 -- ideally you want to automate the processing of adding keys
--- make an easy to use and share spreadsheet and setup a script to export to this file 
--- TODO ^
+-- TODO: make an easy to use and share spreadsheet and setup a script to export to this file 
 
 -- community translation projects
 -- https://docs.google.com/spreadsheets/d/135HgMYcRDt6vnJN0d-xFMEZUeWjVbc61ETf8uVwHERE/edit#gid=0
@@ -20,6 +18,9 @@ en = {
 	LANGUAGE_NAME = "English",
 	TOGGLE_PROFILER = "Toggle Profiler (Extra Long Super Long String)",
 	TOGGLE_FADE = "Toggle Fade",
+	ABOUT = "About",
+	START = "Start",
+	EXIT = "Exit"
 },
 
 
@@ -79,6 +80,9 @@ ro = {
 
 ru = {
 	LANGUAGE_NAME = "Русский",
+	START = "НАЧАЛО",
+	ABOUT = "ОКОЛО",
+	EXIT = "ВЫХОД"
 },
 
 
