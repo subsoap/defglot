@@ -1,8 +1,6 @@
--- localization module
--- your fonts need to have the characters for the languages you want support!!
+-- DefGlot is a localization module for Defold
+-- Your fonts need to have the characters for the languages you want support!!
 
--- todo - 
--- make batched set text function based on list
 
 local M = {}
 
@@ -25,9 +23,13 @@ end
 function M.init()
 	local language = M.language or sys.get_sys_info().language
 	if M.language_list[language] then
-		M.language = language or M.default_langauge
+		M.language = language
 	else
-		M.language = M.default_language
+		if M.language_list[M.default_language] then
+			M.language = M.default_language
+		else
+			print("DefGlot: The default language is not in your language list!")
+		end
 	end
 	M.initilized = true
 end
