@@ -11,7 +11,7 @@ M.default_language = "en"
 M.language_list = {en = "en"}
 M.initilized = false
 
-M.languages = {}
+M.locale_data = {}
 
 function M.init()
 	local language = M.language or sys.get_sys_info().language

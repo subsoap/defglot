@@ -3,7 +3,7 @@ local defglot = require("defglot.defglot")
 
 function init(self)
 	defglot.language = "en" -- if you don't set a language manually DefGlot will use OS lang
-	defglot.languages = require("example.main_locale")
+	defglot.locale_data = require("example.main_locale")
 	defglot.init()
 	
 	defglot.set_text(gui.get_node("btn_start/label"), "LANGUAGE_NAME")

@@ -20,7 +20,7 @@ Then add your list of languages, language data, init, and set GUI text based on 
 function init(self)
 	defglot.language = "ru" -- if you do not define the language DefGlot will attempt to use OS lang
 	defglot.language_list.ru = "ru" -- add one or more langauges to in use language list
-	defglot.languages = require("example.main_locale") -- this is the locale data
+	defglot.locale_data = require("example.main_locale") -- this is the locale data
 	defglot.init() -- you must init DefGlot so that it can ensure proper setup
 	
 	defglot.set_text(gui.get_node("btn_start/label"))

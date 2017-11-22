@@ -5,7 +5,7 @@ function init(self)
 	defglot.language = "ru"
 	defglot.language_list.ru = "ru"
 	pprint(defglot.language_list)
-	defglot.languages = require("example.main_locale")
+	defglot.locale_data = require("example.main_locale")
 	defglot.init()
 	
 	defglot.set_text(gui.get_node("btn_start/label"))

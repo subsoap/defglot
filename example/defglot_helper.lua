@@ -9,7 +9,7 @@ function M.init(defglot)
 
 	if defglot.initilized == false then
 		defglot.language = "en" -- if you don't set a language manually DefGlot will use OS lang
-		defglot.languages = require("example.main_locale")
+		defglot.locale_data = require("example.main_locale")
 		defglot.init()
 		print("DefGlot Helper is initilizing DefGlot")
 	end
