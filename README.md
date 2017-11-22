@@ -8,7 +8,7 @@ You can use DefGlot in your own project by adding this project as a [Defold libr
 
 	https://github.com/subsoap/defglot/archive/master.zip
   
-Once added, you must require the main Lua module in your GUI scripts via
+Once added, you must require the main Lua module in your scripts via
 
 ```
 local defglot = require("defglot.defglot")
@@ -29,5 +29,12 @@ function init(self)
 	defglot.set_text(gui.get_node("btn_toggle_profiler/label")) 
 	-- the toggle profiler text is missing so it will load missing string text in English
 end
+
+```
+
+DefGlot also works with GO labels but if you use it with labels you must always set a key as currently there is no label.get_text.
+
+```
+	defglot.set_text("#label", "MY_KEY")
 
 ```
