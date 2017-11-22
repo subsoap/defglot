@@ -74,7 +74,8 @@ end
 function M.set_text(target, key)
 
 	if M.initilized == false then 
-		print("DefGlot: You should init DefGlot with defglot.init() in your GUI's init!")
+		print("DefGlot: You should init DefGlot with defglot.init() in your script's init!")
+		print("DefGlot: Check the DefGlot example for the defglot_helper.lua usage")
 	end
 	
 	if is_gui_context() then
