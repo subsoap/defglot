@@ -6,7 +6,8 @@ function init(self)
 	defglot.languages = require("example.main_locale")
 	defglot.init()
 	
-	defglot.set_text(gui.get_node("btn_start/label"))
+	defglot.set_text(gui.get_node("btn_start/label"), "LANGUAGE_NAME")
+	-- you can either include the key you want to use, or use the current text of the label as the key
 	defglot.set_text(gui.get_node("btn_about/label"))
 	defglot.set_text(gui.get_node("btn_exit/label"))
 	defglot.set_text(gui.get_node("btn_toggle_profiler/label")) 

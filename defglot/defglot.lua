@@ -48,12 +48,16 @@ function M.autofit_text(node)
 end
 
 
-function M.set_text(node)
+function M.set_text(node, key)
 	if M.initilized == false then 
 		print("DefGlot: You should init DefGlot with defglot.init() in your GUI's init!")
 	end
-	local node_text_key = gui.get_text(node)
-	gui.set_text(node,M.get_text(node_text_key))
+	if key == nil then
+		local node_text_key = gui.get_text(node)
+		gui.set_text(node,M.get_text(node_text_key))
+	else
+		gui.set_text(node,M.get_text(key))
+	end
 	M.autofit_text(node)
 end
 
