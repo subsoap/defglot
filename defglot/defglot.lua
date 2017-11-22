@@ -15,10 +15,10 @@ M.use_default_if_missing = false
 M.locale_data = {}
 
 local function is_gui_context()
-	if pcall(gui.hide_keyboard) then
-		return true
-	else
+	if pcall(go.get_id) then
 		return false
+	else
+		return true
 	end
 end
 
@@ -37,7 +37,6 @@ function M.get_langauge()
 end
 
 function M.get_text(key)
-	print(is_gui_context())
 	if next(M.locale_data) == nil then
 		print("DefGlot: You have not set any language data. Check the example.")
 	end
@@ -71,6 +70,7 @@ end
 
 
 function M.set_text(target, key)
+
 	if M.initilized == false then 
 		print("DefGlot: You should init DefGlot with defglot.init() in your GUI's init!")
 	end
@@ -85,7 +85,6 @@ function M.set_text(target, key)
 		end
 		M.autofit_text(target)
 	else
-		print("How?")
 		if key == nil then
 			print("DefGlot: You must always pass a key when setting GO label text as there is currently no label.get_text")
 			label.set_text(target, "YOU MUST SET WITH A KEY!")
