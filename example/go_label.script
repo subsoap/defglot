@@ -1,0 +1,36 @@
+local defglot = require("defglot.defglot")
+local defglot_helper = require("example.defglot_helper")
+
+function init(self)
+	
+	defglot_helper.init(defglot)
+	
+	label.set_text("#label", defglot.get_text("START"))
+	
+	
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end
