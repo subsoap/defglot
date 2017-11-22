@@ -10,7 +10,8 @@ function init(self)
 	-- you can either include the key you want to use, or use the current text of the label as the key
 	defglot.set_text(gui.get_node("btn_about/label"))
 	defglot.set_text(gui.get_node("btn_exit/label"))
-	defglot.set_text(gui.get_node("btn_toggle_profiler/label")) 
+	defglot.set_text(gui.get_node("btn_toggle_profiler/label"))
+	
 	-- you can see the very long string for the profiler button is shrunk to fit
 end
 
