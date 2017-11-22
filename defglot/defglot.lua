@@ -10,6 +10,7 @@ M.language = nil
 M.default_language = "en"
 M.language_list = {en = "en"}
 M.initilized = false
+M.use_default_if_missing = false
 
 M.locale_data = {}
 
@@ -34,8 +35,20 @@ function M.get_text(key)
 	
 	local text = M.locale_data[M.language][key]
 	if text == nil then
-		print(key .. " is missing for " .. M.language )
-		return M.locale_data.en.MISSING_KEY .. key
+		if M.use_default_if_missing then
+			text = M.locale_data[M.default_language][key]
+			if text ~= nil then
+				print("DefGlot: Warning using default for " .. key)
+				return text
+			else
+				print("DefGlot: " .. key .. " is missing for " .. M.language )
+				return M.locale_data.en.MISSING_KEY .. key					
+			end
+		else
+			print("DefGlot: " .. key .. " is missing for " .. M.language )
+			return M.locale_data.en.MISSING_KEY .. key			
+		end
+
 	else
 		return text
 	end

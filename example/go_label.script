@@ -4,8 +4,12 @@ local defglot_helper = require("example.defglot_helper")
 function init(self)
 	
 	defglot_helper.init(defglot)
+	defglot.use_default_if_missing = true
 	
 	label.set_text("#label", defglot.get_text("START"))
+	
+	defglot.language = "ru"
+	label.set_text("#label1", defglot.get_text("TOGGLE_PROFILER"))
 	
 	
 end
