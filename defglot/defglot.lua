@@ -28,14 +28,14 @@ function M.get_langauge()
 end
 
 function M.get_text(key)
-	if next(M.languages) == nil then
+	if next(M.locale_data) == nil then
 		print("DefGlot: You have not set any language data. Check the example.")
 	end
 	
-	local text = M.languages[M.language][key]
+	local text = M.locale_data[M.language][key]
 	if text == nil then
 		print(key .. " is missing for " .. M.language )
-		return M.languages.en.MISSING_KEY .. key
+		return M.locale_data.en.MISSING_KEY .. key
 	else
 		return text
 	end
