@@ -64,14 +64,17 @@ function M.get_text(key)
 	end
 end
 
-function M.autofit_text(node)
+function M.autofit_text(node, set_scale)
+	if set_scale == nil then
+		set_scale = 1
+	end
 	local text_metrics = gui.get_text_metrics_from_node(node)
-	local scale = math.min(1, gui.get_size(node).x / text_metrics.width)
+	local scale = math.min(1, gui.get_size(node).x / text_metrics.width)*set_scale
 	gui.set_scale(node, vmath.vector3(scale, scale, scale))
 end
 
 
-function M.set_text(target, key)
+function M.set_text(target, key, scale)
 
 	if M.initilized == false then 
 		print("DefGlot: You should init DefGlot with defglot.init() in your script's init!")
@@ -86,7 +89,7 @@ function M.set_text(target, key)
 		else -- set text based on passed key value
 			gui.set_text(target,M.get_text(key))
 		end
-		M.autofit_text(target)
+		M.autofit_text(target, scale)
 	else
 		if key == nil then
 			print("DefGlot: You must always pass a key when setting GO label text as there is currently no label.get_text")
