@@ -35,7 +35,7 @@ function M.init()
 end
 
 function M.get_langauge()
-	return M.langauge
+	return M.language
 end
 
 function M.get_text(key)
