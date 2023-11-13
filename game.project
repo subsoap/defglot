@@ -1,6 +1,6 @@
 [project]
 title = DefGlot
-dependencies = https://github.com/britzl/gooey/archive/master.zip
+dependencies = https://github.com/britzl/gooey/archive/refs/tags/1.1.zip
 
 [library]
 include_dirs = defglot
