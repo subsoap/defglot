@@ -6,7 +6,7 @@ local M = {}
 
 M.language = nil
 M.default_language = "en"
-M.language_list = {en = "en"}
+M.language_list = { en = "en" }
 M.initilized = false
 M.use_default_if_missing = false
 
@@ -34,15 +34,15 @@ function M.init()
 	M.initilized = true
 end
 
-function M.get_langauge()
-	return M.langauge
+function M.get_language()
+	return M.language
 end
 
 function M.get_text(key)
 	if next(M.locale_data) == nil then
 		print("DefGlot: You have not set any language data. Check the example.")
 	end
-	
+
 	local text = M.locale_data[M.language][key]
 	if text == nil then
 		if M.use_default_if_missing then
@@ -51,14 +51,13 @@ function M.get_text(key)
 				print("DefGlot: Warning using default for " .. key)
 				return text
 			else
-				print("DefGlot: " .. key .. " is missing for " .. M.language )
-				return M.locale_data.en.MISSING_KEY .. key					
+				print("DefGlot: " .. key .. " is missing for " .. M.language)
+				return M.locale_data.en.MISSING_KEY .. key
 			end
 		else
-			print("DefGlot: " .. key .. " is missing for " .. M.language )
-			return M.locale_data.en.MISSING_KEY .. key			
+			print("DefGlot: " .. key .. " is missing for " .. M.language)
+			return M.locale_data.en.MISSING_KEY .. key
 		end
-
 	else
 		return text
 	end
@@ -69,25 +68,22 @@ function M.autofit_text(node, set_scale)
 		set_scale = 1
 	end
 	local text_metrics = gui.get_text_metrics_from_node(node)
-	local scale = math.min(1, gui.get_size(node).x / text_metrics.width)*set_scale
+	local scale = math.min(1, gui.get_size(node).x / text_metrics.width) * set_scale
 	gui.set_scale(node, vmath.vector3(scale, scale, scale))
 end
 
-
 function M.set_text(target, key, scale)
-
-	if M.initilized == false then 
+	if M.initilized == false then
 		print("DefGlot: You should init DefGlot with defglot.init() in your script's init!")
 		print("DefGlot: Check the DefGlot example for the defglot_helper.lua usage")
 	end
-	
+
 	if is_gui_context() then
-	
 		if key == nil then -- set text based on current text of label
 			local node_text_key = gui.get_text(target)
-			gui.set_text(target,M.get_text(node_text_key))
+			gui.set_text(target, M.get_text(node_text_key))
 		else -- set text based on passed key value
-			gui.set_text(target,M.get_text(key))
+			gui.set_text(target, M.get_text(key))
 		end
 		M.autofit_text(target, scale)
 	else
@@ -97,11 +93,7 @@ function M.set_text(target, key, scale)
 		else
 			label.set_text(target, M.get_text(key))
 		end
-		
 	end
 end
-
-
-
 
 return M
